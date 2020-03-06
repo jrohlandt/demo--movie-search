@@ -1,25 +1,25 @@
 .header {
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    background-color: $grey-dark;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background-color: $grey-dark;
 }
 
-.header-logo a  {
-    color: #fff;
-    text-decoration: none;
+.header-logo a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .header nav ul li {
-    list-style: none;
-    a {
-        color: #fff;
-        text-decoration: none;    
-    }
+  list-style: none;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .top-nav-active {
-    background-color: #444;
+  background-color: #444;
 }

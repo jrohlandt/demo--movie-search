@@ -1,45 +1,44 @@
-import React from 'react';
+import React from "react";
 
 class MovieSearch extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-        super(props);
+    this.state = {
+      searchTerm: ""
+    };
 
-        this.state = {
-            searchTerm: '',
-        };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
-    }
+  handleChange(e) {
+    this.setState({ searchTerm: e.target.value });
+  }
 
-    handleChange(e) {
-        this.setState({searchTerm: e.target.value});
-    }
+  handleSubmit() {
+    this.props.searchMovies(this.state.searchTerm);
+  }
 
-    handleSubmit() {
-        this.props.searchMovies(this.state.searchTerm);
-    }
+  handleKeyDown(e) {
+    if (e.key !== "Enter") return;
+    this.handleSubmit();
+  }
 
-    handleKeyDown(e) {
-        if (e.key !== 'Enter') return;
-        this.handleSubmit();
-    }
-
-    render() {
-        return (
-            <div>
-                <input 
-                    type="text" 
-                    placeholder="Search title" 
-                    onChange={this.handleChange} 
-                    onKeyDown={this.handleKeyDown} 
-                />
-                <button onClick={this.handleSubmit}>search</button>
-            </div>
-        );
-    }
-} 
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Search title"
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
+        />
+        <button onClick={this.handleSubmit}>search</button>
+      </div>
+    );
+  }
+}
 
 export default MovieSearch;

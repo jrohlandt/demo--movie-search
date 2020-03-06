@@ -1,62 +1,64 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
 // Variables
-@import 'variables';
-@import './header.scss';
-@import './movie-list.scss';
+@import "variables";
+@import "./header.scss";
+@import "./movie-list.scss";
 
-html {}
+html {
+}
 
-*, *:before, *:after {
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    background-color: $body-bg;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: $body-bg;
 }
 
-
-body, ul, li {
-    margin: 0;
-    padding: 0;
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
-  
 .content {
-    grid-area: content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 !important;
-    .heading, .empty-watchlist-notification {
-        color: $grey-lightest;
-    }
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 !important;
+  .heading,
+  .empty-watchlist-notification {
+    color: $grey-lightest;
+  }
 
-    width: 100%;
+  width: 100%;
 }
-
-
 
 .footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 
 .wrapper {
-    color: #444;
+  color: #444;
 }
-  
+
 .wrapper {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-gap: 1em;
-    grid-template-areas:
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
     "header"
     "content"
-    "footer"
+    "footer";
 }
 
 // @media only screen and (min-width: 500px)  {
@@ -78,28 +80,22 @@ body, ul, li {
 //         "header  header  header"
 //                 "sidebar content sidebar2"
 //                 "footer  footer  footer";
-    
+
 //     }
 
 //     // .content {
 //     //     max-width: 700px;
 //     // }
 
-
 // }
-  
+
 .box {
-    // background-color: #444;
-    // color: #fff;
-    padding: 10px;
-    // font-size: 150%; 
+  // background-color: #444;
+  // color: #fff;
+  padding: 10px;
+  // font-size: 150%;
 }
-
-
-
-
 
 .footer {
-    background-color: transparent;
+  background-color: transparent;
 }
-
