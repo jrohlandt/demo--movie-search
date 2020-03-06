@@ -67,7 +67,7 @@ class Movie extends React.Component {
 
   componentDidMount() {
     this.setState({ heading: "Loading...", watchLater: this.getWatchLater() });
-    Ajax.get("/data/movies/popular.json")
+    Ajax.get("/demos/movie-search/data/movies/popular.json")
       .then(res => {
         if (typeof res.results != "undefined") {
           this.setState({

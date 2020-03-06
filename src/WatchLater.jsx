@@ -22,7 +22,7 @@ class WatchLater extends Movie {
   componentDidMount() {
     const watchLater = this.getWatchLater();
     this.setState({ heading: "Loading...", watchLater });
-    Ajax.get("/data/movies/popular.json")
+    Ajax.get("/demos/movie-search/data/movies/popular.json")
       .then(res => {
         if (typeof res.results != "undefined") {
           this.setState({

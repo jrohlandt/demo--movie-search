@@ -29,8 +29,8 @@ const App = () => (
     <div className="wrapper">
       <TopNav />
       <div className="box content">
-        <Route exact path="/" component={Movies} />
-        <Route path="/watch-later" component={WatchLater} />
+        <Route exact path="/demos/movie-search/" component={Movies} />
+        <Route path="/demos/movie-search/watch-later" component={WatchLater} />
       </div>
       <div className="box footer"></div>
     </div>
