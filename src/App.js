@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Route, NavLink, Link } from 'react-router-dom';
+
+// import { FaClock, FaChartBar, FaRegFolder, FaUser, FaTags, FaSignOutAlt, FaPowerOff } from 'react-icons/fa';
+import './sass/app.scss';
+
+import TopNav from './components/TopNav';
+import Movies from "./Movies";
+import WatchLater from "./WatchLater";
+// import withMovies from "./components/withMovies";
+
+// const WatchLaterWithMovies = withMovies(WatchLater);
+
+const logout = () => window.location = '/logout';
+
+const App = () => (
+    <Router>
+        <div className="wrapper">
+            <TopNav />
+            <div className="box content">
+                <Route exact path="/" component={Movies} />
+                <Route path="/watch-later" component={WatchLater} />
+            </div>
+            <div className="box footer"></div>
+        </div>
+
+    </Router>
+);
+
 
 export default App;
+// ReactDOM.render(<App />, document.getElementById('app'));

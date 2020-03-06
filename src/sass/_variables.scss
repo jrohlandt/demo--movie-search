@@ -1,0 +1,42 @@
+
+// Body
+$body-bg: rgb(0, 0, 0);
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+
+// 
+$grey-darkest: rgb(0, 0, 0);
+$grey-darker: rgb(11, 11, 11);
+$grey-dark: rgb(18, 18, 18);
+$grey: rgb(48, 48, 48);
+$grey-light: rgb(18, 18, 18);
+$grey-lighter: rgb(18, 18, 18);
+$grey-lightest: rgb(219, 219, 219);
+
+$primary-text: rgb(255, 255, 255);
+
+// Colors
+$primary-color: #ffffff;
+$secondary-color: rgb(231,185,23);
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+// Breakpoints
+$breakpoint-larger: 1200px;
+$breakpoint-large: 1000px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 414px;
+$breakpoint-smaller: 375px; 
+$breakpoint-smallest: 320px;
