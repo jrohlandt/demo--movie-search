@@ -22,7 +22,7 @@
 
 .navbar {
   position: fixed;
-  background-color: var(--bg-primary);
+  background-color: $grey-dark;
   transition: width 200ms ease;
   z-index: 100;
 }
@@ -43,10 +43,10 @@
   width: 100%;
   font-weight: bold;
   text-transform: uppercase;
-  margin-botton: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   color: var(--text-secondary);
-  background-color: var(--bg-secondary);
+  background-color: $grey-darker;
   letter-spacing: 0.3ch;
 }
 
@@ -84,9 +84,9 @@
 }
 
 .nav-link:hover,
-.nav-link-active {
+.navbar:hover .nav-link-active {
   color: var(--text-secondary);
-  background-color: var(--bg-secondary);
+  background-color: $grey-darker;
 }
 .nav-link:hover svg,
 .nav-link-active svg {
