@@ -1,11 +1,10 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
 
-// Variables
 @import "variables";
-// @import "./header.scss";
 @import "./MainNav.scss";
-@import "./movie-list.scss";
+@import "./MovieSearch.scss";
+@import "./MovieList.scss";
 
 @import "./scrollbar.scss";
 

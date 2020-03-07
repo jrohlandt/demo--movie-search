@@ -1,0 +1,27 @@
+.MovieSearch--wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.MovieSearch--input {
+  width: 80%;
+  height: 3.5rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  color: $grey-light;
+  background-color: $grey-dark;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  outline: none;
+}
+
+.MovieSearch--submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  background-color: $primary-color;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}

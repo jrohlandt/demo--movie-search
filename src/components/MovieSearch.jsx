@@ -1,5 +1,7 @@
 import React from "react";
 
+import { MdSearch } from "react-icons/md";
+
 class MovieSearch extends React.Component {
   constructor(props) {
     super(props);
@@ -28,14 +30,17 @@ class MovieSearch extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="MovieSearch--wrapper">
         <input
           type="text"
-          placeholder="Search title"
+          placeholder="Search by title"
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
+          className="MovieSearch--input"
         />
-        <button onClick={this.handleSubmit}>search</button>
+        <div onClick={this.handleSubmit} className="MovieSearch--submit">
+          <MdSearch size={30} />
+        </div>
       </div>
     );
   }
