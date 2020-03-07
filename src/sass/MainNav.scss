@@ -55,6 +55,7 @@ $transition-speed: 600ms;
   color: $grey-lighter;
   text-decoration: none;
   transition: $transition-speed;
+  outline: none;
 }
 
 .nav-link svg {
