@@ -3,8 +3,11 @@
 
 // Variables
 @import "variables";
-@import "./header.scss";
+// @import "./header.scss";
+@import "./MainNav.scss";
 @import "./movie-list.scss";
+
+@import "./scrollbar.scss";
 
 html {
 }
@@ -38,6 +41,7 @@ li {
   .empty-watchlist-notification {
     color: $grey-lightest;
   }
+  margin-left: 5rem;
 
   width: 100%;
 }

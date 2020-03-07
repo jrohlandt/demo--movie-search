@@ -11,12 +11,10 @@ import {
 // import { FaClock, FaChartBar, FaRegFolder, FaUser, FaTags, FaSignOutAlt, FaPowerOff } from 'react-icons/fa';
 import "./sass/app.scss";
 
-import TopNav from "./components/TopNav";
+// import TopNav from "./components/TopNav";
+import MainNav from "./components/MainNav";
 import Movies from "./Movies";
 import WatchLater from "./WatchLater";
-// import withMovies from "./components/withMovies";
-
-// const WatchLaterWithMovies = withMovies(WatchLater);
 
 const logout = () => (window.location = "/logout");
 
@@ -27,9 +25,11 @@ if (window.localStorage.getItem("watchLater") === null) {
 const App = () => (
   <Router>
     <div className="wrapper">
-      <TopNav />
+      <MainNav />
       <div className="box content">
         <Route exact path="/demos/movie-search/" component={Movies} />
+        <Route exact path="/demos/movie-search/popular" component={Movies} />
+        <Route exact path="/demos/movie-search/settings" component={Movies} />
         <Route path="/demos/movie-search/watch-later" component={WatchLater} />
       </div>
       <div className="box footer"></div>

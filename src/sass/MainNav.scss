@@ -1,0 +1,142 @@
+:root {
+  font-size: 16px;
+  font-family: Open Sans;
+  --color-primary: rgb(231, 185, 23);
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+// body {
+//   margin: 0;
+//   padding: 0;
+//   color: black;
+//   background-color: white;
+// }
+
+// main {
+//   margin-left: 5rem;
+// }
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
+  z-index: 100;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* needed to push last child to bottom along with 
+  .nav-item:last-child margin-top: auto.
+  */
+}
+
+.nav-logo {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-botton: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  letter-spacing: 0.3ch;
+}
+
+.nav-logo svg {
+  transform: rotate(0deg);
+  transition: transform var(--transition-speed);
+}
+
+.navbar:hover .nav-logo svg {
+  color: var(--text-primary);
+  transform: rotate(-180deg);
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-speed);
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+  /*   transition: var(--transition-speed); */
+}
+
+.nav-link:hover,
+.nav-link-active {
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+}
+.nav-link:hover svg,
+.nav-link-active svg {
+  color: $primary-color;
+}
+
+.nav-link-text {
+  display: none;
+  min-width: 150px;
+  margin-left: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 250px;
+  }
+
+  .navbar:hover .nav-link-text {
+    display: block;
+  }
+}
