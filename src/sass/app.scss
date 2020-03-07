@@ -9,6 +9,10 @@
 
 @import "./scrollbar.scss";
 
+:root {
+  font-size: 16px;
+}
+
 html {
 }
 
@@ -41,9 +45,6 @@ li {
   .empty-watchlist-notification {
     color: $grey-lightest;
   }
-  margin-left: 5rem;
-
-  width: 100%;
 }
 
 .footer {
@@ -102,4 +103,11 @@ li {
 
 .footer {
   background-color: transparent;
+}
+
+@media only screen and (min-width: $breakpoint-large) {
+  .content {
+    width: calc(100% - $main-nav-width-not-exanded);
+    margin-left: $main-nav-width-not-exanded;
+  }
 }

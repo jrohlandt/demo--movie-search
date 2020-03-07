@@ -81,7 +81,7 @@ class Movie extends React.Component {
 
   render() {
     return (
-      <div style={{ width: "100%" }}>
+      <div>
         <MovieSearch searchMovies={this.searchMovies} />
         <h1 className="heading">{this.state.heading}</h1>
         <MovieList

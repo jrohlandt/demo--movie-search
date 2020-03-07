@@ -1,24 +1,4 @@
-:root {
-  font-size: 16px;
-  font-family: Open Sans;
-  --color-primary: rgb(231, 185, 23);
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
-}
-
-// body {
-//   margin: 0;
-//   padding: 0;
-//   color: black;
-//   background-color: white;
-// }
-
-// main {
-//   margin-left: 5rem;
-// }
+$transition-speed: 600ms;
 
 .navbar {
   position: fixed;
@@ -45,18 +25,18 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
   text-align: center;
-  color: var(--text-secondary);
+  color: $grey-lightest;
   background-color: $grey-darker;
   letter-spacing: 0.3ch;
 }
 
 .nav-logo svg {
   transform: rotate(0deg);
-  transition: transform var(--transition-speed);
+  transition: transform $transition-speed;
 }
 
 .navbar:hover .nav-logo svg {
-  color: var(--text-primary);
+  color: $grey-lighter;
   transform: rotate(-180deg);
 }
 
@@ -72,20 +52,20 @@
   display: flex;
   align-items: center;
   height: 5rem;
-  color: var(--text-primary);
+  color: $grey-lighter;
   text-decoration: none;
-  transition: var(--transition-speed);
+  transition: $transition-speed;
 }
 
 .nav-link svg {
   min-width: 2rem;
   margin: 0 1.5rem;
-  /*   transition: var(--transition-speed); */
+  /*   transition: var($transition-speed); */
 }
 
 .nav-link:hover,
 .navbar:hover .nav-link-active {
-  color: var(--text-secondary);
+  color: $grey-lightest;
   background-color: $grey-darker;
 }
 .nav-link:hover svg,
@@ -101,7 +81,7 @@
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: $breakpoint-medium) {
   .navbar {
     bottom: 0;
     width: 100vw;
@@ -125,7 +105,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $breakpoint-medium) {
   .navbar {
     top: 0;
     width: 5rem;
