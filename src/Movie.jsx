@@ -2,8 +2,8 @@ import React from "react";
 
 import MovieSearch from "./components/MovieSearch";
 import MovieList from "./components/MovieList";
-
 import Ajax from "./helpers/Ajax";
+import popularMovies from "./popular.json";
 
 class Movie extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Movie extends React.Component {
     this.state = {
       movies: [],
       heading: "Popular movies",
-      watchLater: []
+      watchLater: [],
     };
 
     this.searchMovies = this.searchMovies.bind(this);
@@ -23,15 +23,15 @@ class Movie extends React.Component {
   searchMovies(searchTerm) {
     this.setState({ movies: [], heading: "Searching..." });
     Ajax.post("/movies/search", { searchTerm })
-      .then(res => {
+      .then((res) => {
         if (typeof res.movies != "undefined") {
           this.setState({
             movies: res.movies,
-            heading: `Search results (${res.movies.length})`
+            heading: `Search results (${res.movies.length})`,
           });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ heading: "An error ocurred." });
         console.log(err);
       });
@@ -50,7 +50,7 @@ class Movie extends React.Component {
   }
 
   deleteFromWatchLater(movieId) {
-    let watchLater = this.state.watchLater.filter(id => id !== movieId);
+    let watchLater = this.state.watchLater.filter((id) => id !== movieId);
     this.setState({ watchLater });
     this.setWatchLater(watchLater);
     // Ajax.delete(`/watchlist/${movieId}`).catch(err => console.log(err));
@@ -67,16 +67,21 @@ class Movie extends React.Component {
 
   componentDidMount() {
     this.setState({ heading: "Loading...", watchLater: this.getWatchLater() });
-    Ajax.get("/demos/movie-search/data/movies/popular.json")
-      .then(res => {
-        if (typeof res.results != "undefined") {
-          this.setState({
-            movies: res.results,
-            heading: "Popular movies"
-          });
-        }
-      })
-      .catch(err => console.log(err));
+    console.log({ popularMovies });
+    this.setState({
+      movies: popularMovies.results,
+      heading: "Popular movies",
+    });
+    // Ajax.get("/demos/movie-search/data/movies/popular.json")
+    //   .then(res => {
+    //     if (typeof res.results != "undefined") {
+    //       this.setState({
+    //         movies: res.results,
+    //         heading: "Popular movies"
+    //       });
+    //     }
+    //   })
+    //   .catch(err => console.log(err));
   }
 
   render() {
